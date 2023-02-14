@@ -4,6 +4,7 @@ let player = document.querySelector('.player');
 let playerdefpos = 100;
 let max = window.innerWidth;
 let direction = '';
+let lastTime = Date.now();
 rightButton.addEventListener('mousedown', () => {
     direction = 'right';
 });
@@ -18,15 +19,19 @@ leftButton.addEventListener('mouseup', () => {
 });
 tick = () => {
     updateFps();
+    let time = Date.now();
+    let deltaTime = time - lastTime;
+    deltaTime /= 1000;
+    lastTime = time;
     if(direction == 'right'){
         if(playerdefpos < max - 200){
-            playerdefpos = playerdefpos + 1;
+            playerdefpos = playerdefpos + 1000 * deltaTime;
             player.style.left = playerdefpos.toString() + "px";
         }
     }
     if(direction == 'left'){
         if(playerdefpos > 100){
-            playerdefpos = playerdefpos - 1;
+            playerdefpos = playerdefpos - 1000 * deltaTime;
             player.style.left = playerdefpos.toString() + "px";
         }
     }
