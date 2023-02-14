@@ -9,11 +9,12 @@
                 border-radius: 100%;
                 position: fixed;
                 bottom: 10px;
-                left: 300px;
+                left: 100px;
             }
         </style>
     </head>
     <body>
+        <span id="fps">--</span> FPS</div>
         <button id="left" style="font-size: 100px;">
             ←
         </button>
@@ -22,19 +23,7 @@
         </button>
         <div class="player">
         </div>
-        <script>
-            let rightButton = document.querySelector('#right');
-            let player = document.querySelector('.player');
-            let playerdefpos = 300;
-            rightButton.addEventListener('click', () => {
-                playerdefpos = playerdefpos + 10;
-                player.style.left = playerdefpos.toString() + "px";
-            });
-            let leftButton = document.querySelector('#left');
-            leftButton.addEventListener('click', () => {
-                playerdefpos = playerdefpos - 10;
-                player.style.left = playerdefpos.toString() + "px";
-            });
-        </script>
+        <script src="./fpscounter.js"></script>
+        <script src="./scripts.js"></script>
     </body>
 </html>
