@@ -42,7 +42,6 @@ document.addEventListener('keydown', function(event) {
 if (event.code == 'ArrowLeft'){
     direction = 'left'
 }
-
 else if (event.code == 'ArrowRight'){
     direction = 'right'
 }
